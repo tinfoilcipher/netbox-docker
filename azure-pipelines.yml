@@ -20,7 +20,7 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        arguments: --build-arg "NETBOX_PATH=netbox" --target main .
+        arguments: --build-arg "NETBOX_PATH=netbox"
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
