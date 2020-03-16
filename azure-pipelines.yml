@@ -32,3 +32,13 @@ stages:
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'pull'
+    
+    - task: DockerCompose@0
+      inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscription: 'tinfoilcipher(5a276f10-4ae1-4943-8c23-463409a3374c)'
+        azureContainerRegistry: '{"loginServer":"tinfoilregistry.azurecr.io", "id" : "/subscriptions/5a276f10-4ae1-4943-8c23-463409a3374c/resourceGroups/tinfoil_logic_rg/providers/Microsoft.ContainerRegistry/registries/tinfoilregistry"}'
+        dockerComposeFile: '**/docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'up'
+        arguments: '-d'
